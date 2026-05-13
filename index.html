@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Girth — Legal</title>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,500&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080609;
+    --surface: #0f0c10;
+    --surface2: #161218;
+    --accent: #b84159;
+    --accent-dim: rgba(184,65,89,0.12);
+    --accent-border: rgba(184,65,89,0.25);
+    --text: #e8e2ec;
+    --text-muted: #7a6e82;
+    --text-dim: #4a4252;
+    --border: rgba(255,255,255,0.06);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'General Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.75;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+  .site-header {
+    padding: 56px 0 52px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 52px;
+  }
+  .logo-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    text-decoration: none;
+  }
+  .logo-icon {
+    width: 36px; height: 36px;
+    border-radius: 9px;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .logo-icon svg { width: 36px; height: 36px; display: block; }
+  .logo-name { font-family: 'Cabinet Grotesk', sans-serif; font-size: 18px; color: var(--text); letter-spacing: 0.03em; font-weight: 700; }
+  .header-title { font-family: 'Cabinet Grotesk', sans-serif; font-size: clamp(30px, 5vw, 44px); line-height: 1.1; color: var(--text); margin-bottom: 14px; font-weight: 700; letter-spacing: -0.02em; }
+  .section-num { font-family: 'General Sans', sans-serif; font-size: 12px; color: var(--accent); opacity: 0.55; min-width: 22px; font-weight: 500; }
+  .section-title { font-family: 'Cabinet Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: var(--accent); line-height: 1.15; letter-spacing: -0.01em; }
+  .footer-brand { font-family: 'Cabinet Grotesk', sans-serif; font-size: 15px; color: var(--text-muted); font-weight: 700; }
+  .header-title em { color: var(--accent); font-style: normal; font-weight: 500; }
+  .header-meta { font-size: 13px; color: var(--text-muted); letter-spacing: 0.04em; }
+  .privacy-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: var(--accent-dim);
+    border: 1px solid var(--accent-border);
+    border-radius: 100px;
+    padding: 6px 16px 6px 10px;
+    margin-top: 26px;
+    font-size: 13px;
+    color: var(--accent);
+  }
+  .badge-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.75); }
+  }
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 26px;
+    margin-bottom: 52px;
+  }
+  .toc-label { font-size: 11px; letter-spacing: 0.1em; color: var(--text-dim); text-transform: uppercase; margin-bottom: 14px; }
+  .toc-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .toc-list a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .toc-list a::before {
+    content: '';
+    display: inline-block;
+    width: 18px; height: 1px;
+    background: var(--text-dim);
+    transition: background 0.2s, width 0.25s;
+    flex-shrink: 0;
+  }
+  .toc-list a:hover { color: var(--text); }
+  .toc-list a:hover::before { background: var(--accent); width: 26px; }
+  .intro-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 24px;
+    margin-bottom: 52px;
+    font-size: 15px;
+    color: #c0b8cc;
+    line-height: 1.7;
+  }
+  .section { margin-bottom: 56px; scroll-margin-top: 32px; }
+  .section-header {
+    display: flex; align-items: baseline; gap: 12px;
+    margin-bottom: 22px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section p { color: #b0a8bc; font-size: 15px; margin-bottom: 14px; }
+  .section p:last-child { margin-bottom: 0; }
+  .highlight-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    padding: 18px 22px;
+    margin: 20px 0;
+    font-size: 15px;
+    color: #b0a8bc;
+    line-height: 1.7;
+  }
+  .warning-block {
+    background: rgba(184,65,89,0.07);
+    border: 1px solid rgba(184,65,89,0.18);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+  }
+  .warning-label { font-size: 11px; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; font-weight: 500; }
+  .warning-block p { font-size: 14px; color: #b89098; margin-bottom: 0; }
+  .policy-list { list-style: none; display: flex; flex-direction: column; gap: 11px; margin: 18px 0; }
+  .policy-list li {
+    display: flex; align-items: flex-start; gap: 13px;
+    font-size: 15px; color: #b0a8bc; line-height: 1.65;
+  }
+  .policy-list li::before {
+    content: '';
+    display: block;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 9px;
+    opacity: 0.65;
+  }
+  .site-footer {
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .footer-note { font-size: 13px; color: var(--text-dim); }
+  @media (max-width: 520px) {
+    .header-title { font-size: 28px; }
+    .section-title { font-size: 20px; }
+    .site-footer { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="site-header">
+    <a class="logo-mark" href="#">
+      <div class="logo-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="406 50 700 700"><defs><linearGradient x1="786.00704" y1="614.4539" x2="725.65993" y2="164.00308" gradientUnits="userSpaceOnUse" id="lg1"><stop offset="0" stop-color="#62172e"/><stop offset="1" stop-color="#c42d58"/></linearGradient><linearGradient x1="792.82383" y1="613.20977" x2="718.91695" y2="165.23411" gradientUnits="userSpaceOnUse" id="lg2"><stop offset="0" stop-color="#1f0c14"/><stop offset="1" stop-color="#61182e"/></linearGradient><linearGradient x1="765.27773" y1="532.46094" x2="745.83878" y2="253.20113" gradientUnits="userSpaceOnUse" id="lg3"><stop offset="0" stop-color="#a92145"/><stop offset="1" stop-color="#dc3a61"/></linearGradient></defs><g fill="none" fill-rule="nonzero"><g><g><g><g><g><path d="M476,110h560v560h-560z" fill="#1e0f16"/><path d="M640.06824,175.77319c0.96716,-0.04704 1.93512,-0.0804 2.90308,-0.09953c17.03106,-0.28329 34.68636,-0.04074 51.7661,-0.04457l101.01765,-0.0082l51.08087,0.03446c14.58516,0.01258 30.82188,-0.74565 44.95859,2.34747c18.03866,4.01516 34.58436,13.02547 47.74218,26.00035c19.8789,19.35718 29.44101,45.08437 29.52031,72.52493c0.04922,17.52296 0.04376,35.04565 0.04376,52.56781l0.00547,97.55566l0.03007,50.91134c-0.00547,16.54023 0.77657,32.84258 -2.88477,49.04101c-4.025,17.54101 -12.80507,33.63007 -25.37772,46.50624c-19.43866,19.84063 -43.43007,29.45743 -71.05547,29.72813h-162.49899l-45.64355,-0.01094c-14.0134,0 -26.65796,0.78751 -40.45207,-2.08634c-17.45681,-3.71601 -33.57812,-12.0996 -46.6468,-24.25664c-20.14688,-18.94101 -31.40785,-45.10624 -31.80216,-72.74258c-0.23817,-16.69063 -0.06289,-33.47148 -0.06261,-50.17031l0.01259,-96.65634l-0.00301,-55.40063c-0.00164,-15.76887 -0.81129,-32.59239 2.48883,-47.9746c3.80106,-17.60254 12.32656,-33.83681 24.66077,-46.95796c18.79446,-19.87235 43.02157,-30.07759 70.19688,-30.80876z" fill="url(#lg1)"/><path d="M581.61359,200.19035c0.14739,-0.15148 0.33606,-0.35354 0.56437,-0.54331c11.97958,-9.74366 26.64348,-16.24164 41.78808,-19.05913c7.86078,-1.46235 15.53371,-1.73797 23.44972,-1.72184c8.63871,0.01723 17.22329,0.0063 25.83493,0.01259l70.6803,0.02981l69.35414,-0.02599l21.82577,-0.03528c3.16913,-0.00765 8.5996,-0.17363 11.60469,0.08367c9.96406,-0.03145 22.81564,-0.41727 32.49259,0.45528c21.99531,1.95042 42.60976,11.54671 58.26406,27.12063c20.17422,20.01563 28.48398,44.66493 28.56875,72.69993l-0.05469,154.57612l-0.0082,45.01876c0.00547,15.33984 0.63437,31.87188 -2.83554,46.81796c-4.15078,17.64218 -13.16875,33.7668 -26.02852,46.5418c-20.53242,20.63906 -45.13359,27.70469 -73.5,27.7539l-154.56739,0.01367l-43.03852,0.01094c-15.15336,0.00819 -30.33052,0.67539 -45.16751,-2.65508c-17.33047,-3.85273 -33.22347,-12.51523 -45.85657,-24.98945c-17.42782,-17.3961 -26.80099,-38.86095 -28.75742,-63.32266c-0.60157,-7.51953 -0.45772,-15.57227 -0.45882,-23.14375l0.00082,-30.26134l-0.0309,-77.85422l-0.02324,-65.99387l0.00684,-23.62555c-0.00411,-7.29777 -0.07301,-13.6511 0.57913,-20.86711c2.0404,-22.57254 11.89042,-44.73901 28.17089,-60.6241c2.40352,-2.345 4.36052,-4.39989 7.14219,-6.4124z" fill="url(#lg2)"/><path d="M772.39805,252.23974c1.91406,0.19331 4.21366,0.38308 6.08125,0.8061c3.04063,0.23134 8.07735,1.38331 11.08242,2.12598c20.39023,5.16551 39.27383,15.07843 55.10312,28.93023c3.27305,2.82598 6.52422,5.82012 9.45273,8.99883c1.40547,1.52277 2.36523,3.23477 0.66446,4.96782c-4.88359,4.97575 -9.92305,9.80629 -14.88594,14.70657l-10.10352,9.95777c-2.08906,2.04641 -5.00937,5.2254 -7.47305,6.55211c-1.43007,-0.55727 -7.3746,-6.14005 -8.99883,-7.53566c-26.29648,-22.58922 -62.04843,-27.06075 -93.79782,-13.15727c-22.59716,10.02284 -40.28472,28.61523 -49.16871,51.68352c-8.75355,22.85718 -7.99831,48.2661 2.09727,70.56218c10.03434,22.35078 28.54305,39.7961 51.44836,48.49141c3.83988,1.46563 7.49192,2.55937 11.47153,3.58751c1.5277,0.39375 7.12988,1.21406 8.1077,1.62969c9.58153,0.8504 13.74051,1.08282 23.42293,0.53866c0.51681,-0.20507 3.3496,-0.5961 4.0004,-0.68359c35.78204,-4.81249 66.64218,-33.36211 73.63671,-68.65195c-7.7711,-0.31446 -17.68594,-0.05195 -25.56913,-0.05195l-48.33282,0.04375c-0.18319,5.22265 0.60977,30.98866 -0.47852,33.84063c-0.47578,1.26329 -1.48477,2.25312 -2.75625,2.70977c-4.43242,1.61601 -8.52578,-3.80625 -11.46249,-6.68554l-12.61066,-12.38671l-24.20005,-23.81913c-4.44446,-4.37227 -8.91789,-8.7254 -13.28878,-13.16601c-1.55422,-1.58594 -1.73606,-3.23477 -0.19277,-4.91366c2.86617,-3.11446 5.93169,-6.07031 8.93129,-9.0557l17.58695,-17.49671l19.95683,-19.77472c3.33047,-3.29984 6.74843,-6.75746 10.17735,-9.96516c1.0254,-0.87937 2.13829,-1.45742 3.49181,-1.51676c3.20742,-0.20399 4.50078,2.43141 4.74413,5.26669c0.2707,3.10681 0.03282,6.27157 0.0957,9.38519c0.1504,7.62016 -0.32265,15.48394 0.08204,23.07704c2.96134,0.23216 8.24688,0.09242 11.30937,0.09134l20.49141,-0.0123l63.47852,0.01258c7.48946,0.00192 17.30312,-0.47796 24.83087,0.62864c1.52031,0.22312 1.61601,3.74692 1.78282,5.09251c12.94453,105.86078 -90.65,187.22211 -190.32289,144.73812c-33.99594,-14.87227 -60.79528,-42.49493 -74.63094,-76.92343c-13.78972,-34.52148 -13.17969,-73.12676 1.69422,-107.19434c11.67087,-27.3566 31.53035,-50.4257 56.84765,-66.0346c4.14312,-2.5211 9.78606,-5.79169 14.26113,-7.57587c22.47765,-10.35098 47.33445,-14.43626 71.94219,-11.82356z" fill="url(#lg3)"/></g></g></g></g></g></g></svg>
+      </div>
+      <span class="logo-name">Girth</span>
+    </a>
+    <h1 class="header-title">Terms, Privacy &amp;<br><em>Community Guidelines</em></h1>
+    <p class="header-meta">Last updated: May 2026 &nbsp;·&nbsp; Girth v1.0</p>
+    <div class="privacy-badge">
+      <div class="badge-dot"></div>
+      Your data never leaves your device
+    </div>
+  </header>
+
+  <nav class="toc">
+    <p class="toc-label">Contents</p>
+    <ul class="toc-list">
+      <li><a href="#age">Age Restriction</a></li>
+      <li><a href="#health">Health &amp; Medical Disclaimer</a></li>
+      <li><a href="#terms">Terms of Use</a></li>
+      <li><a href="#privacy">Privacy Policy</a></li>
+      <li><a href="#community">Content &amp; Community Guidelines</a></li>
+      <li><a href="#data">Data Responsibility</a></li>
+    </ul>
+  </nav>
+
+  <div class="intro-card">
+    Your privacy is our default. No accounts. No servers. No data collection. Everything stays on your device.
+  </div>
+
+  <section class="section" id="age">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Age Restriction</h2>
+    </div>
+    <p>Girth is intended exclusively for adults aged 18 and older. By using this application, you confirm that you are at least 18 years of age.</p>
+    <div class="warning-block">
+      <p class="warning-label">Important</p>
+      <p>If you are under 18, you must not use this app and should uninstall it immediately.</p>
+    </div>
+  </section>
+
+  <section class="section" id="health">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Health &amp; Medical Disclaimer</h2>
+    </div>
+    <p>Girth is a personal tracking tool only. It does not provide medical advice, diagnosis, or treatment. The exercises and routines referenced in the app are user-configured and are not endorsed, validated, or recommended by the developers.</p>
+    <div class="warning-block">
+      <p class="warning-label">Risk Notice</p>
+      <p>Physical conditioning exercises carry potential risks including injury, nerve damage, and other medical complications. Always consult a qualified healthcare professional before starting any new physical regimen. Use this app entirely at your own risk.</p>
+    </div>
+  </section>
+
+  <section class="section" id="terms">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Terms of Use</h2>
+    </div>
+    <p>By downloading and using Girth, you agree to use it for personal, lawful purposes only. You may not reverse-engineer, redistribute, or resell the application or its content.</p>
+    <p>We reserve the right to update these terms at any time. Continued use of the app after changes constitutes acceptance of the revised terms.</p>
+    <div class="highlight-card">
+      The app is provided "as is" without warranties of any kind. We are not liable for any direct, indirect, or incidental damages arising from your use of Girth.
+    </div>
+  </section>
+
+  <section class="section" id="privacy">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Privacy Policy</h2>
+    </div>
+    <p>Girth is built on a privacy-first principle. Here is exactly what that means:</p>
+    <ul class="policy-list">
+      <li>All data you enter — sessions, measurements, photos, notes — is stored exclusively on your device.</li>
+      <li>No data is transmitted to any external server.</li>
+      <li>We do not collect analytics, usage data, or personal information.</li>
+      <li>We have no account system — there is no profile linked to you.</li>
+      <li>Deleting the app permanently removes all your data.</li>
+    </ul>
+    <p>Your data belongs entirely to you. We have no access to it.</p>
+  </section>
+
+  <section class="section" id="community">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Content &amp; Community Guidelines</h2>
+    </div>
+    <p>Girth is a private, individual tracking tool. There is no social or community feature within the app. Any discussion or content shared externally — on forums, groups, or social media — about conditioning practices is entirely outside the scope and responsibility of Girth.</p>
+    <p>We encourage users to approach their practice with patience, safety, and realistic expectations. No tracking app can guarantee results.</p>
+  </section>
+
+  <section class="section" id="data">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2 class="section-title">Data Responsibility</h2>
+    </div>
+    <p>You are solely responsible for backing up your data. We strongly recommend using the Export feature regularly to keep a backup of your sessions and measurements.</p>
+    <div class="highlight-card">
+      To export your data: Profile → Import / Export. We are not responsible for data loss due to app deletion, device failure, or operating system updates.
+    </div>
+  </section>
+
+  <div style="background: var(--surface); border: 1px solid var(--accent-border); border-radius: 16px; padding: 32px 28px; margin-bottom: 40px; text-align: center;">
+    <p style="font-family: 'Cabinet Grotesk', sans-serif; font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 6px;">Questions or concerns?</p>
+    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">We're here to help. Reach out anytime.</p>
+    <a href="mailto:girthsupport@gmail.com" style="display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: #fff; text-decoration: none; font-family: 'Cabinet Grotesk', sans-serif; font-weight: 700; font-size: 15px; padding: 12px 24px; border-radius: 100px; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="3" width="14" height="10" rx="2" stroke="white" stroke-width="1.5"/><path d="M1 5.5L8 9.5L15 5.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+      girthsupport@gmail.com
+    </a>
+  </div>
+
+  <footer class="site-footer">
+    <span class="footer-brand">Girth</span>
+    <span class="footer-note">© 2026 · All rights reserved</span>
+  </footer>
+
+</div>
+</body>
+</html>
